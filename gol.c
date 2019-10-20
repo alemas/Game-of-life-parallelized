@@ -99,17 +99,14 @@ void clearGrid(int * grid, unsigned int size, int value) {
 
 
 void update(int * grid, int * needsCheck, unsigned int width, unsigned int height) {
-#ifdef TIME_TEST
-  clock_t start = clock();
-#endif
   int *newGrid = malloc(width * height * sizeof(int));
   int *newNeedsCheck = malloc(width * height * sizeof(int));
   clearGrid(newNeedsCheck, width * height, 0);
   unsigned int x, y;
   
-  #pragma omp parallel for schedule(static, 10)
+  #pragma omp parallel for schedule(dynamic, 10)
   for(x = 0; x < width; x ++) {
-	  #pragma omp parallel for schedule(static, 10)
+	  #pragma omp parallel for schedule(dynamic, 10)
     for(y = 0; y < height; y ++) {
       int state = getValue(x, y, grid, width, height);
       if (getValue(x, y, needsCheck, width, height) == 0) {
