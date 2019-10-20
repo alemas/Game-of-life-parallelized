@@ -1,0 +1,64 @@
+1 máquina com 8 nucleos:
+Threads:
+
+1
+real	0m54.279s
+user	0m52.627s
+sys	0m1.396s
+
+2
+real	0m28.968s
+user	0m51.583s
+sys	0m1.424s
+
+3
+real	0m21.738s
+user	0m53.739s
+sys	0m1.816s
+
+4
+real	0m17.603s
+user	0m53.839s
+sys	0m2.248s
+
+5
+real	0m16.827s
+user	1m2.524s
+sys	0m2.548s
+
+6
+real	0m16.052s
+user	1m9.584s
+sys	0m2.928s
+
+7
+real	0m15.414s
+user	1m15.881s
+sys	0m3.484s
+
+8
+real	0m14.820s
+user	1m21.473s
+sys	0m4.024s
+
+9
+real	0m14.811s
+user	1m19.185s
+sys	0m3.908s
+
+
+10
+real	0m14.981s
+user	1m20.417s
+sys	0m4.152s
+
+
+16
+real	0m14.981s
+user	1m20.417s
+sys	0m4.152s
+
+32
+real	0m15.179s
+user	1m21.349s
+sys	0m4.780s
