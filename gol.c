@@ -24,8 +24,8 @@ int main(void) {
   srand( 42 );
 
   // Inicia o array da simulação
-  unsigned int maxX = 5000;
-  unsigned int maxY = 5000;
+  unsigned int maxX = 2000;
+  unsigned int maxY = 2000;
   unsigned int bottomY = maxY;
   maxY -= 1;
 
@@ -104,9 +104,9 @@ void update(int * grid, int * needsCheck, unsigned int width, unsigned int heigh
   clearGrid(newNeedsCheck, width * height, 0);
   unsigned int x, y;
   
-  #pragma omp parallel for schedule(dynamic, 10)
+  #pragma omp parallel for schedule(dynamic, 5)
   for(x = 0; x < width; x ++) {
-	  #pragma omp parallel for schedule(dynamic, 10)
+	  #pragma omp parallel for schedule(dynamic, 5)
     for(y = 0; y < height; y ++) {
       int state = getValue(x, y, grid, width, height);
       if (getValue(x, y, needsCheck, width, height) == 0) {
