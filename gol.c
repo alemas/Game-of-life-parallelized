@@ -6,11 +6,7 @@
 #include <stdbool.h>
 //#include "ncurses.h"
 
-#define TIME_TEST 1
 #define ITERATIONS_LIMIT 100
-#ifdef TIME_TEST
-FILE * timeLog = NULL;
-#endif
 
 int getValue(int x, int y, int * grid, unsigned int width, unsigned int height);
 void setValue(int value, int x, int y, int * grid, int * needsCheck, unsigned int width, unsigned int height);
@@ -103,10 +99,10 @@ void update(int * grid, int * needsCheck, unsigned int width, unsigned int heigh
   int *newNeedsCheck = malloc(width * height * sizeof(int));
   clearGrid(newNeedsCheck, width * height, 0);
   unsigned int x, y;
-  
-  #pragma omp parallel for schedule(dynamic, 5)
+
+  #pragma omp parallel for schedule(dynamic, 10)
   for(x = 0; x < width; x ++) {
-	  #pragma omp parallel for schedule(dynamic, 5)
+	  #pragma omp parallel for schedule(dynamic, 10)
     for(y = 0; y < height; y ++) {
       int state = getValue(x, y, grid, width, height);
       if (getValue(x, y, needsCheck, width, height) == 0) {
